@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  get "home/top" => "home#top"
+  # Rewrite "home/top"
+  get "top" => "home#top"
 end
