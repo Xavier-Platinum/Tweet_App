@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  # Rewrite "home/top"
+  get "posts/index" => "posts#index"
+
   get "/" => "home#top"
 
-  # about page
+  
   get "about" => "home#about"
 end
