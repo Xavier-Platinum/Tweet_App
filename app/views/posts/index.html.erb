@@ -8,16 +8,10 @@
     </li>
   </ul>
 </header>
-<% 
-    posts = [
-      "Learning Rails with Progate!",
-      "Trying to display the posts!"
-    ] 
-%>
 
 <div class="main posts-index">
   <div class="container">
-    <% posts.each do |post| %>
+    <% @posts.each do |post| %>
       <div class="posts-index-item">
         <%= post %>
       </div>
