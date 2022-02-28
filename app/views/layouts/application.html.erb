@@ -1,16 +1,25 @@
+<!-- The HTML that is common in all view files should be written in application.html.erb -->
 <!DOCTYPE html>
 <html>
   <head>
     <title>TweetApp</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <header>
+      <div class="header-logo">
+        <a href="/">TweetApp</a>
+      </div>
+      <ul class="header-menus">
+        <li>
+          <a href="/about">About</a>
+        </li>
+      </ul>
+    </header>
     <%= yield %>
   </body>
 </html>
