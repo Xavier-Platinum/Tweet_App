@@ -20,9 +20,12 @@
         <li>
           <%= link_to("Posts", "/posts/index") %>
         </li>
+        <li>
+          <!-- Add a link to /posts/new using the link_to method -->
+          <%= link_to("New post", "/posts/new" %>
+        </li>
       </ul>
     </header>
     <%= yield %>
   </body>
 </html>
-
