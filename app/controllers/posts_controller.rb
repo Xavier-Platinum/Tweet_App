@@ -15,4 +15,10 @@ class PostsController < ApplicationController
     @post.save
     redirect_to("/posts/index")
   end
+  
+  
+  def edit
+    
+  end
+  
 end
