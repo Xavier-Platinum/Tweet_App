@@ -21,8 +21,11 @@ class PostsController < ApplicationController
   end
   
   def update
+    @post = Post.find_by(id: params[:id])
+    @post.content = params[:content]
+    @post.save
+    puts "Post #{@post.content} saved successfully"
     redirect_to("/posts/index")
   end
-  
   
 end
