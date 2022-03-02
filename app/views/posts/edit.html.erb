@@ -1,7 +1,7 @@
 <div class="main posts-new">
   <div class="container">
     <h1 class="form-heading">Edit a post</h1>
-    <%= form_tag("/posts/#{@post.content}") do %>
+    <%= form_tag("/posts/#{@post.id}/update") do %>
       <div class="form">
         <div class="form-body">
           <textarea><%= @post.content %></textarea>
