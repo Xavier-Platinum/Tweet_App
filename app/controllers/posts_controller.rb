@@ -25,8 +25,9 @@ class PostsController < ApplicationController
     @post.content = params[:content]
     if @post.save
       redirect_to("/posts/index")
-    else 
-      redirect_to("/posts/#{@post.id}/edit")
+    else
+      # Use the render method to display the "Edit post" page without going through the "edit" action
+      render("posts/edit")
     end
   end
   
