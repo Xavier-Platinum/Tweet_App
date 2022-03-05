@@ -25,6 +25,12 @@
         </li>
       </ul>
     </header>
+    <!-- Show the message stored in flash[:notice] -->
+    <% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>

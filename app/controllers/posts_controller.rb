@@ -8,12 +8,17 @@ class PostsController < ApplicationController
   end
   
   def new
+    # Declare @post variable, and assign it the new instance of Post created using the "new" method
+    @post = Post.new
   end
   
   def create
     @post = Post.new(content: params[:content])
-    @post.save
-    redirect_to("/posts/index")
+    if @post.save
+      redirect_to("/posts/index")
+    else
+      render("posts/new")
+    end
   end
   
   def edit
@@ -24,9 +29,9 @@ class PostsController < ApplicationController
     @post = Post.find_by(id: params[:id])
     @post.content = params[:content]
     if @post.save
+      flash[:notice] = "Post successfully edited"
       redirect_to("/posts/index")
     else
-      # Use the render method to display the "Edit post" page without going through the "edit" action
       render("posts/edit")
     end
   end
