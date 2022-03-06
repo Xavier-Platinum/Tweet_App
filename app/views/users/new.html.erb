@@ -3,11 +3,13 @@
       <div class="form-heading">Sign up</div>
       <div class="form users-form">
         <div class="form-body">
-          <p>Name</p>
-          <input>
-          <p>Email</p>
-          <input>
-          <input type="submit" value="Sign up">
+          <%= form_tag("/users/create") do %>
+            <p>Name</p>
+            <input name="name">
+            <p>Email</p>
+            <input name="email">
+            <input type="submit" value="Sign up">
+          <% end %>
         </div>
       </div>
     </div>
