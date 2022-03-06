@@ -21,4 +21,9 @@ class UsersController < ApplicationController
     end
   end
   
+  # Add a new action named edit
+  def edit
+    @user = User.find_by(id: params[:id])
+  end
+  
 end
