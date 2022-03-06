@@ -1,15 +1,12 @@
 <div class="main users-index">
     <div class="container">
       <h1 class="users-heading">All Users</h1>
-      <!-- Add an each method inside <% %> -->
       <% @users.each do |user| %>
         <div class="users-index-item">
           <div class="user-right">
-            <!-- Display the user's name -->
-            <%= user.name %>
+            <%= link_to(user.name, "/users/#{user.id}") %>
           </div>
         </div>
-      <!-- Add an end statement -->
       <% end %>
     </div>
   </div>
