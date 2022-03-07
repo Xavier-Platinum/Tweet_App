@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-  # Add a new route for the update action
+  get "login" => "users#login_form"
   post "users/:id/update" => "users#update"
-  
   get "users/:id/edit" => "users#edit"
   post "users/create" => "users#create"
   get "signup" => "users#new"

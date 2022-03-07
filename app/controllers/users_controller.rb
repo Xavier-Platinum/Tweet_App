@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  
   def index
     @users = User.all
   end
@@ -15,7 +16,7 @@ class UsersController < ApplicationController
     @user = User.new(
       name: params[:name],
       email: params[:email],
-      image_name: "default_user.png"
+      image_name: "default_user.jpg"
     )
     if @user.save
       flash[:notice] = "You have signed up successfully"
@@ -34,7 +35,6 @@ class UsersController < ApplicationController
     @user.name = params[:name]
     @user.email = params[:email]
     
-    # Add code to save the image
     if params[:image]
       @user.image_name = "#{@user.id}.jpg"
       image = params[:image]
@@ -48,5 +48,10 @@ class UsersController < ApplicationController
       render("users/edit")
     end
   end
+  
+  def login_form
+    
+  end
+  
   
 end
