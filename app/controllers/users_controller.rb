@@ -12,7 +12,11 @@ class UsersController < ApplicationController
   end
   
   def create
-    @user = User.new(name: params[:name], email: params[:email])
+    @user = User.new(
+      name: params[:name],
+      email: params[:email],
+      image_name = "default_user.png"
+    )
     if @user.save
       flash[:notice] = "You have signed up successfully"
       redirect_to("/users/#{@user.id}")
@@ -25,7 +29,6 @@ class UsersController < ApplicationController
     @user = User.find_by(id: params[:id])
   end
   
-  # Add a new action named update
   def update
     @user = User.find_by(id: params[:id])
     @user.name = params[:name]
