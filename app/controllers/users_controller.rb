@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     @user = User.new(
       name: params[:name],
       email: params[:email],
-      image_name = "default_user.png"
+      image_name: "default_user.png"
     )
     if @user.save
       flash[:notice] = "You have signed up successfully"
