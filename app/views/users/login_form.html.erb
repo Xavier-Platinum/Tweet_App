@@ -3,12 +3,15 @@
       <div class="form-heading">Log in</div>
       <div class="form users-form">
         <div class="form-body">
-          <p>Email</p>
-          <input type="email">
-          <p>Password</p>
-          <input type="password">
-          <input type="submit" value="Log in">
+          <%= form_tag("/login") do %>
+            <p>Email</p>
+            <input type="email" name="email">
+            <p>Password</p>
+            <input type="password" name="password">
+            <input type="submit" value="Log in">
+          <% do %>
         </div>
       </div>
     </div>
   </div>
+  
