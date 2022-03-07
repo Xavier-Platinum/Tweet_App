@@ -8,9 +8,11 @@
               <%= message %>
             </div>
           <% end %>
-          <%= form_tag("/users/#{@user.id}/update") do %>
+          <%= form_tag("/users/#{@user.id}/update", {multipart: true}) do %>
             <p>Name</p>
             <input name="name" value="<%= @user.name %>">
+            <p>Image</p>
+            <input name="image" type="file">
             <p>Email</p>
             <input name="email" value="<%= @user.email %>">
             <input type="submit" value="Save">
