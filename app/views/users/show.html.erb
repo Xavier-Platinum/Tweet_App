@@ -1,9 +1,10 @@
 <div class="main user-show">
     <div class="container">
       <div class="user">
+        <!-- Add an <img> tag to display the profile image -->
+        <img src="<%= "/user_images/#{@user.image_name}" %>">
         <h2><%= @user.name %></h2>
         <p><%= @user.email %></p>
-        <!-- Add a link to the "Edit Account" page -->
         <%= link_to("Edit", "/users/#{@user.id}/edit") %>
       </div>
     </div>
