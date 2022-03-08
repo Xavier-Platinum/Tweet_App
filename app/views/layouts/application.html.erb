@@ -16,7 +16,7 @@
       <ul class="header-menus">
         <% if @current_user %>
           <li>
-            <%= link_to(@current_user.name, "/users/#{current_user.id}") %>
+            <%= link_to(@current_user.name, "/users/#{@current_user.id}") %>
           </li>
           <li>
             <%= link_to("Posts", "/posts/index") %>
