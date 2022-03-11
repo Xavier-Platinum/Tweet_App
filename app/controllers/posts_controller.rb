@@ -14,7 +14,11 @@ class PostsController < ApplicationController
   end
   
   def create
-    @post = Post.new(content: params[:content])
+    @post = Post.new(
+      content: params[:content],
+      # Add an argument to set the "user_id"
+      user_id: @current_user.id
+    )
     if @post.save
       flash[:notice] = "Post successfully created"
       redirect_to("/posts/index")
