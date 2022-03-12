@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :authenticate_user, {only: [:index, :show, :edit, :update]}
   before_action :forbid_login_user, {only: [:new, :create, :login_form, :login]}
   before_action :ensure_correct_user, {only: [:edit, :update]}
-
+  
   def index
     @users = User.all
   end
@@ -78,6 +78,8 @@ class UsersController < ApplicationController
   end
   
   def likes
+    @user = User.find_by(id: params[:id])
+    @likes = Like.where(user_id: @user.id)
   end
   
   def ensure_correct_user
