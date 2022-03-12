@@ -14,9 +14,8 @@
       <% if Like.find_by(user_id: @current_user.id, post_id: @post.id) %>
         Liked!
       <% else %>
-        Not Liked!
+        <%= link_to("Like!", "/likes/#{@post.id}/create", {method: "post"}) %>
       <% end %>
-      
       <% if @post.user_id == @current_user.id %>
         <div class="post-menus">
           <%= link_to("Edit", "/posts/#{@post.id}/edit") %>
