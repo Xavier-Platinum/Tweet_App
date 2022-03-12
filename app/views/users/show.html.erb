@@ -8,6 +8,12 @@
         <%= link_to("Edit", "/users/#{@user.id}/edit") %>
       <% end %>
     </div>
+    
+    <ul class="user-tabs">
+      <li class="active"><%= link_to("Posts", "/users/#{@user.id}") %></li>
+      <li><%= link_to("Likes", "/users/#{@user.id}/likes") %></li>
+    </ul>
+    
     <% @user.posts.each do |post| %>
       <div class="posts-index-item">
         <div class="post-left">
